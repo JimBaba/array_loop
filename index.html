@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays and Loops</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<header>
+    <h1>This is an array and loop script test</h1>
+
+</header>
+
+<body>
+    <p id="test"></p>
+    <p id="test2"></p>
+    <script id="array">
+        
+        // creates list of array items
+        function listCreator(name) {
+            text += "<li>" + name + "</li>";
+        }
+        
+        // init array
+        let text, testArray; 
+        testArray = ["Alex", "Ali", "Daniel", "Bruno", "Lu"];
+
+        // foreach is a build in function for arrays, in this case it takes each array item and pits it into
+        // the created list function within a <ul>
+        text = "<ul>";
+            testArray.forEach(listCreator);
+        text += "</ul>";
+
+        document.getElementById("test").innerHTML = text;
+    </script>
+    <script id="loop">
+
+        //another way to do this is via for loops, should use this as it has more uses overall and s an important
+        // concept to know and learn, useful for the TourenzettelV2
+
+        let sortLen, text2, beerArray;
+        beerArray = ["Jever", "Flensburger", "Becks", "Gosser"];
+        sortLen = beerArray.length;
+        let myBeer = prompt("whats your favorite beer?");
+        
+        if (beerArray.indexOf(myBeer) !== true) {
+            alert("Cool, we think so too, that's why we already have it.");
+        } 
+        else {
+            beerArray[0] = myBeer;
+            
+        }        
+        
+
+        text2 += "<ul>";
+        for (i = 0; i < sortLen; i++) {
+            text2 += "<li>" + beerArray[i] + "</li>";
+        }
+        text2 += "</ul>";
+        document.getElementById("test2").innerHTML = text2;
+
+
+    </script>
+
+</body>
+
+<footer>
+
+</footer>
